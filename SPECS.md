@@ -1,64 +1,72 @@
-# Objetivo
+# Especificaciones: Bookshelf
 
-Generar un prototipo mock a partir de 'index.html' para la gestión de una biblioteca, incluyendo catálogo, préstamos y socios.
+## Objetivo
 
-# Description
+Crear un prototipo de panel de administración para una biblioteca comunitaria. Está dirigido al personal de la biblioteca y permite consultar el catálogo, los préstamos activos y los socios. El diseño prioriza su uso en computadoras de escritorio y portátiles.
 
-Prototipo de dashboar enfocado en Desktop/Portátil para la gestión de una biblioteca.
-La navegacion principal de los elementos sera el sidebar, en el cual se encontraran enumeradas las vistas detalladas de Catálogo, Préstamos y Socios. Se debe destacar la vista activa actualmente. Al inicio del sidebar se debe mostrar el nombre de la biblioteca. "Bookshelf"
+## Stack y restricciones
 
-# Stack & Restrictions
+- HTML5 semántico, con `index.html` como página principal.
+- Tailwind CSS mediante CDN; sin archivos CSS personalizados ni atributos `style` en línea.
+- JavaScript vanilla para la navegación, las interacciones y los datos simulados; sin frameworks, bibliotecas adicionales ni herramientas de build.
+- Datos de ejemplo locales en JavaScript y JSON. Las operaciones simulan peticiones al backend; no se requiere un servidor ni persistencia real.
+- Diseño limpio y minimalista, siguiendo un sistema visual plano (*flat design*).
 
-Html Tailwind CSS via CDN por defecto, sin frameworks adicionales. JS simple si es necesario solo para los mocks.
-Mantener un diseño limpio y minimalista, siguiendo un flat design system.
+## Navegación y comportamiento global
 
-# Alcance
-
-Generar una interfaz mock de la aplicación de gestión de biblioteca, incluyendo la gestión de catálogo, préstamos y socios.
-Mockearemos las peticiones al backend con un archivo js simple y JSON. Con lo minimo esencial para probar la transicion de estados.
-La idea es tener una interfaz limpia con la menor cantidad de elementos posibles, siguiendo un flat design system.
+- Una barra lateral izquierda persistente muestra el nombre **Bookshelf** y los enlaces a Catálogo, Préstamos y Socios.
+- Al seleccionar un enlace, se muestra la sección correspondiente y se destaca el enlace activo.
+- Una barra superior incluye un control de modo claro/oscuro que cambia la apariencia de todo el panel mediante las utilidades `dark:` de Tailwind.
+- Los menús de acciones se cierran al hacer clic fuera de ellos.
+- Los modales se cierran con su botón de cierre y al hacer clic en el fondo que los rodea.
 
 ## Secciones
 
-### Catalogo
+### Catálogo
 
-## Descripción
+- **Tabla de libros:** muestra al menos cinco libros de ejemplo con título, autor, género y un indicador de estado: Disponible, En préstamo o Vencido.
+- **Menú de acciones:** cada fila incluye un botón `⋮` con las opciones «Ver detalle» y «Eliminar». «Ver detalle» abre un modal con la información completa del libro. «Eliminar» puede quedar como acción simulada sin efecto.
+- **Estados:** los indicadores permiten distinguir visualmente la disponibilidad y los préstamos vencidos.
 
-Una tabla con todos los libros: título, autor, género y estado de disponibilidad (Disponible / En Préstamo / Vencido). Cada fila tiene un dropdown de acción ⋮ con dos opciones: "Ver detalle" (abre un modal con la información completa del libro) y "Eliminar".
+### Préstamos
 
-### Estados
+- **Tabla de préstamos activos:** muestra al menos cuatro registros de ejemplo con prestatario, título del libro, fecha de préstamo y fecha de devolución.
+- **Indicador de vencimiento:** los préstamos vencidos se distinguen con un badge rojo.
+- **Menú de acciones:** cada fila incluye un botón `⋮` con «Ver detalle» y «Marcar como devuelto». «Ver detalle» muestra la información del préstamo en un modal.
+- **Transición simulada:** al marcar un préstamo como devuelto, deja de aparecer entre los préstamos activos y se actualizan el estado del libro y el número de préstamos activos del socio. Los cambios solo se mantienen durante la sesión del prototipo.
 
-### Acciones
+### Socios
 
-## Prestamos
+- **Lista de socios:** muestra al menos tres socios de ejemplo con nombre, correo electrónico y número de préstamos activos.
+- **Menú de acciones:** cada socio tiene un botón `⋮` con «Ver detalle», que abre un modal con su registro completo.
+- **Estados:** el contador de préstamos activos refleja las devoluciones simuladas.
 
-Una tabla con los préstamos actuales: nombre del prestatario, título del libro, fecha de préstamo y fecha de devolución. Los préstamos vencidos se destacan con un badge de color. Cada fila tiene un dropdown ⋮ con "Ver detalle" y "Marcar como devuelto".
+## Inventario de componentes
 
-### Estados
+| Componente | Función |
+| --- | --- |
+| Barra lateral | Navegar entre secciones y destacar la vista activa. |
+| Tabla y fila de datos | Presentar registros y sus acciones. |
+| Menú desplegable | Mostrar las acciones disponibles para cada registro. |
+| Modal | Mostrar detalles de libros, préstamos y socios. |
+| Badge | Identificar estados de disponibilidad o vencimiento. |
+| Control de tema | Alternar entre los modos claro y oscuro. |
+| Gestor de vistas | Mostrar la sección seleccionada y sincronizar la barra lateral. |
+| Búsqueda (opcional) | Filtrar los datos a partir del texto introducido. |
+| Paginación | Navegar entre páginas cuando haya más registros de los que caben en una página. |
 
-### Acciones
+## Criterios de aceptación
 
-## Socios
+1. Las tres secciones se abren desde la barra lateral y la sección activa queda resaltada.
+2. El catálogo muestra al menos cinco libros, préstamos muestra al menos cuatro registros y socios muestra al menos tres.
+3. Las filas muestran los campos y las acciones definidos para su sección; los préstamos vencidos se identifican con un badge rojo.
+4. «Ver detalle» abre un modal con la información del registro seleccionado en cada sección.
+5. Todos los modales se cierran tanto con el botón de cierre como al hacer clic en el fondo.
+6. Todos los menús de acciones se cierran al hacer clic fuera de ellos.
+7. El control de tema alterna entre modo claro y oscuro en todo el panel.
+8. Al marcar un préstamo como devuelto, se actualizan la lista de préstamos activos, la disponibilidad del libro y el contador del socio sin llamar a un backend real.
+9. La paginación permite recorrer todos los registros cuando ocupan más de una página.
 
-Una lista de los socios registrados: nombre, correo electrónico y número de préstamos activos. Cada socio tiene un dropdown ⋮ con "Ver detalle" (abre un modal con el registro completo del socio).
+## Referencia
 
-### Estados
-
-### Acciones
-
-## Components
-
-- "DataTable component for displaying tabular data with actions and badges."
-- "Dropdown component for displaying a list of actions for each row in the table."
-- "Badge component for displaying status indicators such as availability or overdue status." (Disponible / En Préstamo / Vencido)
-- "SideBar component for displaying the main navigation with the active view highlighted and the library name at the top."
-- "Modal component for displaying detailed information about a book or a member."
-- "Search component for filtering the data in the tables based on user input." (Opcional)
-- "Pagination component for navigating through large sets of data in the tables."
-- "ViewHandler component for managing the active view and updating the sidebar accordingly."
-- "Pagination component for navigating through large sets of data in the tables."
-- "ViewHandler component for managing the active view and updating the sidebar accordingly."
-
-# Restricciones
-
-# Criterios de Aceptacion
+Especificaciones adaptadas del [ejemplo de panel de administración de biblioteca de 4Geeks Academy](https://github.com/4GeeksAcademy/ai-engineering-syllabus/blob/HEAD/content/projects/agent-hub-ui-specs-and-prompts/.learn/example/README.es.md).

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookshelf</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>tailwind.config = { darkMode: 'class' };</script>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100">
+  <div class="flex min-h-screen">
+    <aside class="w-60 shrink-0 border-r border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-800">
+      <h1 class="mb-6 text-xl font-bold">Bookshelf</h1>
+      <nav class="flex flex-col gap-1">
+        <a href="#catalog" data-link="catalog" class="rounded px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-700 aria-[current=page]:bg-indigo-600 aria-[current=page]:text-white">Catálogo</a>
+        <a href="#loans" data-link="loans" class="rounded px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-700 aria-[current=page]:bg-indigo-600 aria-[current=page]:text-white">Préstamos</a>
+        <a href="#members" data-link="members" class="rounded px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-700 aria-[current=page]:bg-indigo-600 aria-[current=page]:text-white">Socios</a>
+      </nav>
+    </aside>
+
+    <div class="flex flex-1 flex-col">
+      <header class="flex justify-end border-b border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-800">
+        <button id="theme-toggle" class="rounded border border-slate-300 px-3 py-1 text-sm hover:bg-slate-100 dark:border-slate-600 dark:hover:bg-slate-700">
+          <span class="dark:hidden">🌙 Modo oscuro</span>
+          <span class="hidden dark:inline">☀️ Modo claro</span>
+        </button>
+      </header>
+
+      <main class="flex-1 p-6">
+        <section data-view="catalog" class="hidden">
+          <h2 class="mb-4 text-lg font-semibold">Catálogo</h2>
+          <div id="catalog-table"></div>
+        </section>
+        <section data-view="loans" class="hidden">
+          <h2 class="mb-4 text-lg font-semibold">Préstamos activos</h2>
+          <div id="loans-table"></div>
+        </section>
+        <section data-view="members" class="hidden">
+          <h2 class="mb-4 text-lg font-semibold">Socios</h2>
+          <div id="members-table"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div id="modal"></div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

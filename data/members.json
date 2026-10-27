@@ -1,0 +1,7 @@
+[
+  { "id": 1, "name": "Ana Martínez", "email": "ana.martinez@example.com", "joinedAt": "2023-03-12" },
+  { "id": 2, "name": "Luis Fernández", "email": "luis.fernandez@example.com", "joinedAt": "2023-07-04" },
+  { "id": 3, "name": "Carla Gómez", "email": "carla.gomez@example.com", "joinedAt": "2024-01-20" },
+  { "id": 4, "name": "Diego Ramírez", "email": "diego.ramirez@example.com", "joinedAt": "2024-05-09" },
+  { "id": 5, "name": "Sofía Herrera", "email": "sofia.herrera@example.com", "joinedAt": "2025-02-15" }
+]

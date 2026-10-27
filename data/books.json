@@ -1,0 +1,14 @@
+[
+  { "id": 1, "title": "Cien años de soledad", "author": "Gabriel García Márquez", "genre": "Novela", "year": 1967 },
+  { "id": 2, "title": "Don Quijote de la Mancha", "author": "Miguel de Cervantes", "genre": "Clásico", "year": 1605 },
+  { "id": 3, "title": "La sombra del viento", "author": "Carlos Ruiz Zafón", "genre": "Misterio", "year": 2001 },
+  { "id": 4, "title": "1984", "author": "George Orwell", "genre": "Distopía", "year": 1949 },
+  { "id": 5, "title": "El principito", "author": "Antoine de Saint-Exupéry", "genre": "Fábula", "year": 1943 },
+  { "id": 6, "title": "Rayuela", "author": "Julio Cortázar", "genre": "Novela", "year": 1963 },
+  { "id": 7, "title": "Fahrenheit 451", "author": "Ray Bradbury", "genre": "Ciencia ficción", "year": 1953 },
+  { "id": 8, "title": "Dune", "author": "Frank Herbert", "genre": "Ciencia ficción", "year": 1965 },
+  { "id": 9, "title": "Orgullo y prejuicio", "author": "Jane Austen", "genre": "Romance", "year": 1813 },
+  { "id": 10, "title": "El nombre de la rosa", "author": "Umberto Eco", "genre": "Misterio", "year": 1980 },
+  { "id": 11, "title": "Ficciones", "author": "Jorge Luis Borges", "genre": "Cuentos", "year": 1944 },
+  { "id": 12, "title": "Sapiens", "author": "Yuval Noah Harari", "genre": "Ensayo", "year": 2011 }
+]

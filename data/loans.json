@@ -1,0 +1,10 @@
+[
+  { "id": 1, "bookId": 1, "memberId": 1, "loanDate": "2026-10-01", "dueDate": "2026-10-15", "returned": false },
+  { "id": 2, "bookId": 4, "memberId": 2, "loanDate": "2026-10-10", "dueDate": "2026-10-24", "returned": false },
+  { "id": 3, "bookId": 5, "memberId": 3, "loanDate": "2026-10-18", "dueDate": "2026-11-01", "returned": false },
+  { "id": 4, "bookId": 8, "memberId": 1, "loanDate": "2026-10-20", "dueDate": "2026-11-03", "returned": false },
+  { "id": 5, "bookId": 3, "memberId": 4, "loanDate": "2026-10-22", "dueDate": "2026-11-05", "returned": false },
+  { "id": 6, "bookId": 10, "memberId": 2, "loanDate": "2026-10-24", "dueDate": "2026-11-07", "returned": false },
+  { "id": 7, "bookId": 7, "memberId": 5, "loanDate": "2026-10-25", "dueDate": "2026-11-08", "returned": false },
+  { "id": 8, "bookId": 11, "memberId": 3, "loanDate": "2026-10-26", "dueDate": "2026-11-09", "returned": false }
+]
